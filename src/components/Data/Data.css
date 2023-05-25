@@ -1,4 +1,5 @@
 .data {
     background: palegoldenrod;
+    flex: auto;
     padding: 1rem;
 }

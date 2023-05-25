@@ -4,21 +4,21 @@ import { useEffect, useRef } from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Sidebar from './components/Sidebar/Sidebar';
-import Child  from './components/Child1/Child';
+import { Router } from './Router';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
+    <BrowserRouter>
       <Header />
       <div className="app-body">
         <Sidebar />
         <div className="app-right-content">
-          <Data />
-          <Child className="app-child1" />
+          <Router />
         </div>
       </div>
       <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
 
