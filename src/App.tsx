@@ -4,19 +4,9 @@ import { useEffect, useRef } from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Sidebar from './components/Sidebar/Sidebar';
-
-// @ts-ignore
-const child = import('MicroFeChild/MicroFeChild');
+import Child  from './components/Child1/Child';
 
 function App() {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    child.then(fc => {
-      fc.mount(ref.current);
-    });
-  }, [child]);
-
   return (
     <div>
       <Header />
@@ -24,7 +14,7 @@ function App() {
         <Sidebar />
         <div className="app-right-content">
           <Data />
-          <div className="app-child" ref={ref} />
+          <Child className="app-child1" />
         </div>
       </div>
       <Footer />
