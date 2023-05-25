@@ -5,7 +5,7 @@ const ExternalTemplateRemotesPlugin = require('external-remotes-plugin')
 //const packageJson = require('../package.json')
 
 const config = {
-    mode: 'development',
+    mode: process.env.NODE_ENV,
     output: {
         publicPath: '/',
     },
