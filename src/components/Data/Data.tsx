@@ -14,5 +14,10 @@ export default function () {
         fetchData();
     }, [])
 
-    return (<div className='data'>Rental reference: {data?.reference}</div>);
+    return (
+        <div className='data'>
+            <div className='data-title'>Internal link</div>
+            <div>Rental reference: {data?.reference}</div>
+        </div>
+    );
 };

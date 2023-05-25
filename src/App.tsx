@@ -1,6 +1,4 @@
 import './App.css';
-import Data from './components/Data/Data';
-import { useEffect, useRef } from 'react';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Sidebar from './components/Sidebar/Sidebar';
@@ -13,9 +11,7 @@ function App() {
       <Header />
       <div className="app-body">
         <Sidebar />
-        <div className="app-right-content">
-          <Router />
-        </div>
+        <Router />
       </div>
       <Footer />
     </BrowserRouter>
