@@ -1,3 +1,4 @@
+import './Data.css';
 import { useEffect, useState } from "react";
 import IData from "./IData";
 
@@ -13,5 +14,5 @@ export default function () {
         fetchData();
     }, [])
 
-    return (<div>Rental reference: {data?.reference}</div>);
+    return (<div className='data'>Rental reference: {data?.reference}</div>);
 };

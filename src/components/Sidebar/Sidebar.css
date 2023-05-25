@@ -1,0 +1,17 @@
+li {
+    background: aliceblue;
+    list-style-type: none;
+    width: 25%;
+}
+
+li ul {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 1rem;
+}
+
+li ul:hover {
+    background: gray;
+    color: white;
+    cursor: pointer;
+}

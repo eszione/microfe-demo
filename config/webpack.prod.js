@@ -1,6 +1,7 @@
 const { merge } = require('webpack-merge')
 const commonConfig = require('./webpack.common')
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+const ExternalTemplateRemotesPlugin = require('external-remotes-plugin')
 //const packageJson = require('../package.json')
 
 const config = {
@@ -18,10 +19,11 @@ const config = {
         new ModuleFederationPlugin({
             name: 'MicroFeContainer',
             remotes: {
-                MicroFeChild: 'MicroFeChild@http://esmond-test-static-child-site.s3-website-us-west-2.amazonaws.com/microfechild.js'
+                MicroFeChild: 'MicroFeChild@https://esmond-test-microfe.s3.us-west-2.amazonaws.com/child/remoteEntry.js'
             },
             //shared: packageJson.dependencies
         }),
+        new ExternalTemplateRemotesPlugin()
     ]
 };
 

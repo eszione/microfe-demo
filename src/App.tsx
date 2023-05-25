@@ -1,28 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
-import Data from './components/Data';
-//import { mount } from 'MicroFeChild/MicroFeChild';
+import Data from './components/Data/Data';
 import { useEffect, useRef } from 'react';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Sidebar from './components/Sidebar/Sidebar';
 
 // @ts-ignore
-const m = import('MicroFeChild/MicroFeChild');
+const child = import('MicroFeChild/MicroFeChild');
 
 function App() {
   const ref = useRef(null);
 
   useEffect(() => {
-    m.then(x => {
-      x.mount(ref.current);
+    child.then(fc => {
+      fc.mount(ref.current);
     });
-  }, [m]);
+  }, [child]);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Data />
-        <div ref={ref} />
-      </header>
+    <div>
+      <Header />
+      <div className="app-body">
+        <Sidebar />
+        <div className="app-right-content">
+          <Data />
+          <div className="app-child" ref={ref} />
+        </div>
+      </div>
+      <Footer />
     </div>
   );
 }
