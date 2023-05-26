@@ -1,6 +1,12 @@
 // @ts-nocheck
-const child1 = import('MicroFeChild/MicroFeChild');
+import { mount } from 'MicroFeChild/App';
+import Routes from 'MicroFeChild/Routes';
+import { AddTradePartnerComponent, EditTradePartnerComponent, ViewTradePartnerComponent} from 'MicroFeChild/Components';
 
 export {
-    child1
+    mount,
+    Routes,
+    AddTradePartnerComponent,
+    EditTradePartnerComponent,
+    ViewTradePartnerComponent
 };

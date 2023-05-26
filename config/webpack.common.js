@@ -19,6 +19,10 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash:8].css',
         }),
+        new HtmlWebpackPlugin({
+            favicon: 'public/favicon.ico',
+            template: 'public/index.html'
+        })
     ],
     module: {
         rules: [
@@ -49,11 +53,5 @@ module.exports = {
                 }
             }
         ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            favicon: 'public/favicon.ico',
-            template: 'public/index.html'
-        })
-    ]
+    }
 }
