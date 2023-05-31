@@ -9,11 +9,15 @@ const config = {
     output: {
         publicPath: '/',
     },
+    devServer: {
+        port: 3001,
+        historyApiFallback: true
+    },
     plugins: [
         new ModuleFederationPlugin({
             name: 'MicroFeContainer',
             remotes: {
-                MicroFeChild: 'MicroFeChild@https://esmond-test-microfe.s3.us-west-2.amazonaws.com/child/remoteEntry.js'
+                MicroFeChild: 'MicroFeChild@http://localhost:3000/remoteEntry.js'
             },
             shared: Object.keys(packageJson.dependencies)
         }),
